@@ -1,0 +1,15 @@
+MariaDB [(none)]> use mysql;
+
+then create your user and password with the following
+
+MariaDB [mysql]> CREATE USER ‘someuser’@’%’ IDENTIFIED BY ‘somepassword’;
+
+define from where the resource can connect , we’ll use anywhere
+
+MariaDB [mysql]> grant select on asteriskcdrdb.* TO ‘someuser’@’%’;
+
+finally apply the new permissions with
+
+MariaDB [mysql]> FLUSH PRIVILEGES;
+
+https://linuxize.com/post/how-to-create-mysql-user-accounts-and-grant-privileges/#:~:text=A%20user%20account%20in%20MySQL,user_password%20with%20the%20user%20password.
